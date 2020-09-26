@@ -2,11 +2,12 @@ Summary:	Objective Open H.323 libraries
 Summary(pl.UTF-8):	Biblioteki Objective Open H.323
 Name:		ooh323c
 Version:	0.9.3
-Release:	1
+Release:	2
 License:	GPL v2 with FLOSS exception
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/ooh323c/%{name}-%{version}.tar.gz
 # Source0-md5:	d557140e31bb592ec8fc9b6eb92908db
+Patch0:		%{name}-no-common.patch
 URL:		https://sourceforge.net/projects/ooh323c
 BuildRequires:	cmake >= 2.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -57,6 +58,7 @@ Dokumentacja API bibliotek ooh323c.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 install -d build

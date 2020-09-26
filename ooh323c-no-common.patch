@@ -1,0 +1,109 @@
+--- ooh323c-0.9.3/media/ooCommon.h.orig	2010-07-28 18:49:36.000000000 +0200
++++ ooh323c-0.9.3/media/ooCommon.h	2020-09-26 08:16:06.488409130 +0200
+@@ -51,7 +51,7 @@
+ #define OOLOG5(a,b,c,d,e)         ooLog(a,b,c,d,e)
+ #define OOLOG9(a,b,c,d,e,f,g,h,i) ooLog(a,b,c,d,e,f,g,h,i)
+ 
+-FILE *fpLog;
++extern FILE *fpLog;
+ 
+ /**
+  * This function logs a trace message into a log file.
+--- ooh323c-0.9.3/media/oomedialx.h.orig	2010-07-28 18:49:36.000000000 +0200
++++ ooh323c-0.9.3/media/oomedialx.h	2020-09-26 08:16:34.709901574 +0200
+@@ -35,9 +35,9 @@
+  * @{
+  */
+ /** Global handle to open sound device */
+-int ghSoundDevice;
++extern int ghSoundDevice;
+ /** Global handle to open raw audio data file */
+-int ghSndFile;
++extern int ghSndFile;
+ 
+ /** Opens a RAW audio data file for read. 
+  * @param filename  Name of the file to be opened.
+--- ooh323c-0.9.3/tests/player/oosndrtp.h.orig	2010-07-28 18:49:36.000000000 +0200
++++ ooh323c-0.9.3/tests/player/oosndrtp.h	2020-09-26 08:17:05.854881955 +0200
+@@ -84,9 +84,9 @@
+ 
+ /* Media API */
+ #ifdef _WIN32
+-HMODULE media;
++extern HMODULE media;
+ #else
+-void * media;
++extern void * media;
+ #endif
+ 
+ 
+--- ooh323c-0.9.3/tests/player/oosndrtp.c.orig	2010-07-28 18:49:36.000000000 +0200
++++ ooh323c-0.9.3/tests/player/oosndrtp.c	2020-09-26 08:18:23.949011826 +0200
+@@ -17,6 +17,11 @@
+ #include "oosndrtp.h"
+ #include "ooCommon.h"
+ 
++#ifdef _WIN32
++HMODULE media;
++#else
++void * media;
++#endif
+ 
+ static MediaAPI_CreateTxRTPChan   FuncPtr_CreateTxRTPChan = 0;
+ static MediaAPI_CloseTxRTPChan    FuncPtr_CloseTxRTPChan = 0;
+--- ooh323c-0.9.3/tests/receiver/oosndrtp.h.orig	2010-07-28 18:49:37.000000000 +0200
++++ ooh323c-0.9.3/tests/receiver/oosndrtp.h	2020-09-26 08:22:39.419188585 +0200
+@@ -84,9 +84,9 @@
+ 
+ /* Media API */
+ #ifdef _WIN32
+-HMODULE media;
++extern HMODULE media;
+ #else
+-void * media;
++extern void * media;
+ #endif
+ 
+ 
+--- ooh323c-0.9.3/tests/receiver/oosndrtp.c.orig	2010-07-28 18:49:37.000000000 +0200
++++ ooh323c-0.9.3/tests/receiver/oosndrtp.c	2020-09-26 09:12:55.938679955 +0200
+@@ -17,6 +17,11 @@
+ #include "oosndrtp.h"
+ #include "ooCommon.h"
+ 
++#ifdef _WIN32
++HMODULE media;
++#else
++void * media;
++#endif
+ 
+ static MediaAPI_CreateTxRTPChan   FuncPtr_CreateTxRTPChan = 0;
+ static MediaAPI_CloseTxRTPChan    FuncPtr_CloseTxRTPChan = 0;
+--- ooh323c-0.9.3/tests/simple/oosndrtp.h.orig	2010-07-28 18:49:37.000000000 +0200
++++ ooh323c-0.9.3/tests/simple/oosndrtp.h	2020-09-26 09:14:02.622199904 +0200
+@@ -84,9 +84,9 @@
+ 
+ /* Media API */
+ #ifdef _WIN32
+-HMODULE media;
++extern HMODULE media;
+ #else
+-void * media;
++extern void * media;
+ #endif
+ 
+ 
+--- ooh323c-0.9.3/tests/simple/oosndrtp.c.orig	2010-07-28 18:49:37.000000000 +0200
++++ ooh323c-0.9.3/tests/simple/oosndrtp.c	2020-09-26 09:13:53.231704219 +0200
+@@ -17,6 +17,11 @@
+ #include "oosndrtp.h"
+ #include "ooCommon.h"
+ 
++#ifdef _WIN32
++HMODULE media;
++#else
++void * media;
++#endif
+ 
+ static MediaAPI_CreateTxRTPChan   FuncPtr_CreateTxRTPChan = 0;
+ static MediaAPI_CloseTxRTPChan    FuncPtr_CloseTxRTPChan = 0;
