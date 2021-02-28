@@ -46,9 +46,7 @@ Statyczne biblioteki ooh323c.
 Summary:	API documentation for ooh323c libraries
 Summary(pl.UTF-8):	Dokumentacja API bibliotek ooh323c
 Group:		Documentation
-%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 API documentation for ooh323c libraries.
