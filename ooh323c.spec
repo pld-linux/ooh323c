@@ -2,7 +2,7 @@ Summary:	Objective Open H.323 libraries
 Summary(pl.UTF-8):	Biblioteki Objective Open H.323
 Name:		ooh323c
 Version:	0.9.3
-Release:	2
+Release:	3
 License:	GPL v2 with FLOSS exception
 Group:		Libraries
 # 0.9.4+ at https://github.com/traviscross/ooh323c (no releases tagged yet)
@@ -71,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}/ooh323c}
 
 cp -pr lib/lib* $RPM_BUILD_ROOT%{_libdir}
-cp -p src/{dlist.h,eventHandler.h,ooCalls.h,ooCapability.h,ooCommon.h,ooLogChan.h,ooSocket.h,ooasn1.h,ooh323.h,ooq931.h,ootrace.h,ootypes.h,printHandler.h} \
+cp -p src/{dlist.h,eventHandler.h,ooCalls.h,ooCapability.h,ooCommon.h,ooConfig.h,ooGkClient.h,ooLogChan.h,ooSocket.h,ooasn1.h,ooh323.h,ooh323ep.h,ooports.h,ooq931.h,ootrace.h,ootypes.h,printHandler.h} \
 	$RPM_BUILD_ROOT%{_includedir}/ooh323c
 cp -p src/h323/H235-SECURITY-MESSAGES.h $RPM_BUILD_ROOT%{_includedir}/ooh323c
 cp -p src/h323_v6/{H323-MESSAGES.h,MULTIMEDIA-SYSTEM-CONTROL.h} $RPM_BUILD_ROOT%{_includedir}/ooh323c
