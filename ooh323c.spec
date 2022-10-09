@@ -5,10 +5,11 @@ Version:	0.9.3
 Release:	2
 License:	GPL v2 with FLOSS exception
 Group:		Libraries
+# 0.9.4+ at https://github.com/traviscross/ooh323c (no releases tagged yet)
 Source0:	http://downloads.sourceforge.net/ooh323c/%{name}-%{version}.tar.gz
 # Source0-md5:	d557140e31bb592ec8fc9b6eb92908db
 Patch0:		%{name}-no-common.patch
-URL:		https://sourceforge.net/projects/ooh323c
+URL:		https://github.com/traviscross/ooh323c
 BuildRequires:	cmake >= 2.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
